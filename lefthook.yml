@@ -1,0 +1,29 @@
+pre-commit:
+  parallel: true
+  commands:
+    build:
+      run: npm run build --if-present
+    test:
+      run: npm test
+
+    format:
+      glob: "*.{js,jsx,ts,tsx,css,scss,html,json}"
+      run: npm run format
+      stage_fixed: true
+
+    lint-styles:
+      glob: "*.{css,scss}"
+      run: npm run lint:styles
+
+    lint:
+      glob: "*.{ts,tsx}"
+      run: npm run lint
+
+    type-check:
+      glob: "*.{ts,tsx}"
+      run: npm run tsc
+
+post-merge:
+  commands:
+    install:
+      run: npm ci

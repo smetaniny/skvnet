@@ -1,0 +1,71 @@
+# Node.js
+/node_modules
+
+# Public build and hot files
+/public/build
+/public/hot
+
+# Storage files
+/storage/*.key
+/storage/pail
+
+# Vendor directory (Composer dependencies)
+/vendor
+
+# Environment configuration
+.env
+.env.production
+.env.backup
+
+# PHPUnit cache and result files
+.phpunit.cache
+.phpunit.result.cache
+
+# Homestead configuration files
+Homestead.json
+Homestead.yaml
+
+# Debug logs
+npm-debug.log
+yarn-error.log
+
+# IDE specific files
+/.fleet
+/.idea
+/.nova
+/.vscode
+/.zed
+
+# Other sensitive files
+/auth.json
+
+# Docker
+.docker/
+docker-compose.override.yml
+
+# Jest or other testing tools
+jest-cache/
+coverage/
+
+# Build files (Vite, Webpack, etc.)
+.vite/
+dist/
+node_modules/
+build/
+
+# Log files
+*.log
+.cache/
+.npm/
+.yarn-cache/
+
+# OS files (macOS, Windows, Linux)
+.DS_Store
+Thumbs.db
+.directory
+
+# Laravel-specific files
+/storage/*
+/bootstrap/cache/*
+/storage/framework/*
+/storage/logs/*

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+>
+    <testsuites>
+        <testsuite name="Unit">
+            <directory>tests/Unit</directory>
+        </testsuite>
+        <testsuite name="Feature">
+            <directory>tests/Feature</directory>
+        </testsuite>
+    </testsuites>
+    <source>
+        <include>
+            <directory>app</directory>
+        </include>
+    </source>
+    <php>
+        <!-- Устанавливаем окружение на "testing", чтобы указать, что это тестовое приложение -->
+        <env name="APP_ENV" value="testing"/>
+
+        <!-- Устанавливаем драйвер для работы с режимом обслуживания приложения, в данном случае файл -->
+        <env name="APP_MAINTENANCE_DRIVER" value="file"/>
+
+        <!-- Устанавливаем количество раундов для хэширования паролей, уменьшаем для быстрого тестирования -->
+        <env name="BCRYPT_ROUNDS" value="4"/>
+
+        <!-- Используется массивный драйвер для кеша, который работает в памяти, без записи на диск -->
+        <env name="CACHE_STORE" value="array"/>
+
+        <!-- Устанавливаем имя базы данных для тестов, чтобы не использовать рабочую базу данных -->
+        <env name="DB_DATABASE" value="testing"/>
+
+        <!-- Устанавливаем драйвер почты для тестирования с использованием массива -->
+        <env name="MAIL_MAILER" value="array"/>
+
+        <!-- Отключаем PULSE (производительность) для тестовой среды -->
+        <env name="PULSE_ENABLED" value="false"/>
+
+        <!-- Устанавливаем соединение с очередями как "sync", что означает синхронное выполнение задач -->
+        <env name="QUEUE_CONNECTION" value="sync"/>
+
+        <!-- Устанавливаем драйвер сессий как "array" для хранения данных сессий в памяти -->
+        <env name="SESSION_DRIVER" value="array"/>
+
+        <!-- Отключаем Telescope для тестовой среды -->
+        <env name="TELESCOPE_ENABLED" value="false"/>
+    </php>
+</phpunit>
